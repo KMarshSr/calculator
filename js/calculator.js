@@ -2,9 +2,10 @@ const ipAddress = document.querySelector('#ipAddress');
 const subnetMask = document.querySelector('#subnetMask');
 const calculate = document.querySelector('#button');
 
-function runProgram () {
+function runProgram() {
     if(validateIPAddress()) {
         console.log(convertSubnetMaskToCIDR());
+        console.log(convertSubnetMaskToInverseMask());
     }
 }
 
@@ -100,6 +101,91 @@ function convertSubnetMaskToCIDR() {
     }
     return cidr;
 }
+
+function convertSubnetMaskToInverseMask() {
+    let inverseMask = '';
+
+    switch(subnetMask.value) {
+        case '255.0.0.0/8':
+            inverseMask = '0.255.255.255';
+            break;
+        case '255.128.0.0/9':
+            inverseMask = '0.127.255.255'
+            break;
+        case '255.192.0.0/10':
+            inverseMask = '0.63.255.255';
+            break;
+        case '255.224.0.0/11':
+            inverseMask = '0.31.255.255';
+            break;
+        case '255.240.0.0/12':
+            inverseMask = '0.15.255.255';
+            break;
+        case '255.248.0.0/13':
+            inverseMask = '0.7.255.255';
+            break;
+        case '255.252.0.0/14':
+            inverseMask = '0.3.255.255';
+            break;
+        case '255.254.0.0/15':
+            inverseMask = '0.1.255.255';
+            break;
+        case '255.255.0.0/16':
+            inverseMask = '0.0.255.255';
+            break;
+        case '255.255.128.0/17':
+            inverseMask = '0.0.127.255';
+            break;
+        case '255.255.192.0/18':
+            inverseMask = '0.0.63.255';
+            break;
+        case '255.255.224.0/19':
+            inverseMask = '0.0.31.255';
+            break;
+        case '255.255.240.0/20':
+            inverseMask = '0.0.15.255';
+            break;
+        case '255.255.248.0/21':
+            inverseMask = '0.0.7.255';
+            break;
+        case '255.255.252.0/22':
+            inverseMask = '0.0.3.255';
+            break;
+        case '255.255.254.0/23':
+            inverseMask = '0.0.1.255';
+            break;
+        case '255.255.255.0/24':
+            inverseMask = '0.0.0.255';
+            break;
+        case '255.255.255.128/25':
+            inverseMask = '0.0.0.127';
+            break;
+        case '255.255.255.192/26':
+            inverseMask = '0.0.0.63';
+            break;
+        case '255.255.255.224/27':
+            inverseMask = '0.0.0.31';
+            break;
+        case '255.255.255.240/28':
+            inverseMask = '0.0.0.15';
+            break;
+        case '255.255.255.248/29':
+            inverseMask = '0.0.0.7';
+            break;
+        case '255.255.255.252/30':
+            inverseMask = '0.0.0.3';
+            break;
+        case '255.255.255.254/31':
+            inverseMask = '0.0.0.1';
+            break;
+        case '255.255.255.255/32':
+            inverseMask = '0.0.0.0';
+            break;
+    }
+    return inverseMask;
+}
+
+function ()
 
 calculate.addEventListener('click', runProgram);
 
