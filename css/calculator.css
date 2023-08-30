@@ -1,3 +1,57 @@
 .navbar-brand {
     color: white;
 }
+
+.container {
+    border-radius: 5px;
+    background-color: black;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+
+}
+
+#ipAddress {
+    width: 100%
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#subnetMask {
+    width: 100%
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box
+}
+
+#subnetMask:hover #subnetMask {
+    display: block;
+}
+
+#button {
+    width: 100%;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#ipAddressLabel {
+    color: white;
+}
+
+#subnetMaskLabel {
+    color: white;
+}
+
